@@ -1,5 +1,7 @@
 {
   "name": "diariotecnologia",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
