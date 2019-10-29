@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
@@ -27,7 +27,7 @@ export class PostPage implements OnInit {
   ngOnInit(){
     console.log(this.baseURl + this.slag)
     let promise = this.http.get(this.baseURl + this.slag);
-    promise.subscribe(data => {
+    promise.subscribe((data : any) => {
       this.post = data.post
     })
   }

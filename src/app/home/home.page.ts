@@ -13,7 +13,6 @@ export class HomePage {
   private page = 0;
   private searchTerm = "";
   private baseURl = "https://www.diariotecnologia.es/api/"
-  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
 
   constructor(private http: HttpClient)  {
 
@@ -21,7 +20,7 @@ export class HomePage {
 
   ngOnInit(){
     let promise = this.http.get(this.baseURl);
-    promise.subscribe(data => {
+    promise.subscribe((data : any) => {
       this.posts = data.posts
       this.page++
       this.searchTerm = data.searchTerm
@@ -32,7 +31,7 @@ export class HomePage {
     setTimeout(() => {
       console.log(this.baseURl + "?page=" + (this.page) )
     let promise = this.http.get(this.baseURl + "?page=" + (this.page) );
-    promise.subscribe(data => {
+    promise.subscribe((data : any) => {
       this.posts = this.posts.concat(data.posts)
       this.page++
       this.searchTerm = data.searchTerm
@@ -48,10 +47,6 @@ export class HomePage {
       this.ngOnInit()
       event.target.complete();
     }, 10000);
-  }
-
-  toggleInfiniteScroll() {
-    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
 
 }
