@@ -1,6 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { IonInfiniteScroll } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
