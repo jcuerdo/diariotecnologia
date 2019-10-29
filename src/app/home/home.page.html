@@ -1,6 +1,38 @@
 <ion-header>
+  <ion-toolbar>
+    <ion-title>Diario Tecnología</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <iframe width="100%" height="100%" src="http://diariotecnologia.es/?isApp=1"></iframe>
+    <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+<ion-list>
+    <ion-card *ngFor="let post of posts" [routerLink]="['/post/', post.slag]">
+        <ion-card-content>
+          <ion-card-title>
+            <h1>{{ post.title }}</h1>
+          </ion-card-title>
+
+          <span>{{post.date | date:'dd-MM-yyyy hh:mm'}}</span>
+          <p>
+            <a href="{{post.link}}">Artículo original</a>
+            </p>
+
+          <div [innerHTML]="post.content"></div>
+
+  
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="nextPage($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="Cargando mas artículos">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+  
+
 </ion-content>

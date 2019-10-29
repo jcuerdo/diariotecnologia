@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons> 
+    <ion-title>
+ {{ post.title }}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+      <ion-card-content>
+        <ion-card-title>
+          <h1>{{ post.title }}</h1>
+        </ion-card-title>
+
+        <span>{{post.date | date:'dd-MM-yyyy hh:mm'}}</span>
+        <p>
+          <a href="{{post.link}}">Artículo original</a>
+          </p>
+
+        <div [innerHTML]="post.content"></div>
+
+      </ion-card-content>
+    </ion-card>
+</ion-content>
