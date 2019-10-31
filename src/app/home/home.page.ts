@@ -56,8 +56,8 @@ export class HomePage {
 
   showInterstitialAds(){
     let interstitialConfig: AdMobFreeInterstitialConfig = {
-        isTesting: true, // Remove in production
-        autoShow: true,
+        isTesting: false, // Remove in production
+        autoShow: false,
         id: "ca-app-pub-6904186947817626/4310930274"
     };
     this.admobFree.interstitial.config(interstitialConfig);
