@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.jca.diariotecnologiaapp" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.jca.diariotecnologiaapp" version="0.0.13" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>DiarioTecnologia</name>
     <description>Diario Tecnología</description>
     <author email="jocual@gmail.com">Jorge Cuerdo Álvarez</author>
@@ -102,6 +102,9 @@
     <plugin name="cordova-plugin-advanced-http" spec="^2.2.0" />
     <plugin name="cordova-plugin-admob-free" spec="^0.27.0">
         <variable name="ADMOB_APP_ID" value="ca-app-pub-6904186947817626~6314277082" />
+    </plugin>
+    <plugin name="cordova-admob-sdk" spec="../plugins/cordova-admob-sdk">
+        <variable name="PLAY_SERVICES_VERSION" value="+" />
     </plugin>
     <engine name="android" spec="8.0.0" />
 </widget>

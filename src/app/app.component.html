@@ -1,3 +1,22 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu contentId="content1" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <ion-menu-toggle auto-hide="false">
+              <ion-item (click)="closeApp()">
+                <ion-icon name="exit"></ion-icon>
+                <ion-label>
+                   Salir
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="content1" main></ion-router-outlet>
 </ion-app>
