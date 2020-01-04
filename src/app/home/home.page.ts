@@ -61,7 +61,12 @@ export class HomePage {
   }
 
   showAd(){
-    this.showInterstitialAds();
+    let rand = this.generateRandom(1,4);
+    console.log(rand)
+
+    if (rand == 4) {
+      this.showInterstitialAds();
+    }
   }
 
   generateRandom(min : number,max : number) : number{

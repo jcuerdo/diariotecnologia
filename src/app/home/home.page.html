@@ -7,13 +7,15 @@
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content class="content">
     <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
         <ion-refresher-content></ion-refresher-content>
       </ion-refresher>
 <ion-list>
     <ion-card class="card" *ngFor="let post of posts" [routerLink]="['/post/', post.slag]">
+<ion-card-header>
+  <img *ngIf="post.image != null" [src]="post.image"/>
+</ion-card-header>
         <ion-card-content>
           <ion-card-title>
             <h1>{{ post.title }}</h1>
@@ -22,11 +24,7 @@
           <span>{{post.date | date:'dd-MM-yyyy hh:mm'}}</span>
           <p>
             <a href="{{post.link}}">Artículo original</a>
-            </p>
-
-          <div [innerHTML]="post.content"></div>
-
-  
+          </p>
         </ion-card-content>
       </ion-card>
     </ion-list>
@@ -34,9 +32,7 @@
     <ion-infinite-scroll threshold="100px" (ionInfinite)="nextPage($event)">
         <ion-infinite-scroll-content
           loadingSpinner="bubbles"
-          loadingText="Cargando mas artículos">
+          loadingText="Cargando mas chollos">
         </ion-infinite-scroll-content>
       </ion-infinite-scroll>
-  
-
 </ion-content>
